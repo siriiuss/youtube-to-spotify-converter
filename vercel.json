@@ -8,8 +8,8 @@
 
     "rewrites": [
     {
-      "source": "/server.py",
-      "destination": "/templates/index.html"
+      "source": "/(.*)",
+      "destination": "/server.py"
     }
   ]
 }
