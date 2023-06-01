@@ -11,7 +11,7 @@ def convert(url, name):
     # YouTube API yetkilendirme.
     scopes = ['https://www.googleapis.com/auth/youtube.readonly']
     flow = InstalledAppFlow.from_client_secrets_file('client_secret.json', scopes=scopes)
-    credentials = flow.run_local_server(port=0)
+    credentials = flow.run_local_server(port=0, host='https://youtube-to-spotify-converter.vercel.app')
 
     youtube = build('youtube', 'v3', credentials=credentials)
 
