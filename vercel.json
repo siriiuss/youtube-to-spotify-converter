@@ -5,12 +5,7 @@
             "use": "@vercel/python"
         }
     ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "https://youtube-to-spotify-converter-git-master-siriiuss.vercel.app/index.html"
-        }
-  ],
+
     "routes": [
         {
             "src": "/(.*)",
