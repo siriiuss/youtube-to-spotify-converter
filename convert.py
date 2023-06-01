@@ -18,7 +18,7 @@ def convert(url, name):
     # Spotify API yetkilendirme
     client_id = os.environ.get('CLIENT_ID')
     client_secret = os.environ.get('CLIENT_SECRET')
-    redirect_uri = 'https://youtube-to-spotify-converter.vercel.app/callback'
+    redirect_uri = "https://youtube-to-spotify-converter.vercel.app/callback"
     scope = 'playlist-modify-public'
 
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
