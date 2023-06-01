@@ -9,7 +9,7 @@
     "rewrites": [
     {
       "source": "/server.py",
-      "destination": "/index.html"
+      "destination": "/templates/index.html"
     }
   ]
 }
