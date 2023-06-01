@@ -5,16 +5,16 @@
             "use": "@vercel/python"
         }
     ],
-      "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://api.example.com/:path*"
-    }
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "https://youtube-to-spotify-converter-git-master-siriiuss.vercel.app/index.html"
+        }
   ],
     "routes": [
         {
-            "src": "/index.html",
-            "dest": "/"
+            "src": "/(.*)",
+            "dest": "/index.html"
         }
     ]
 }
