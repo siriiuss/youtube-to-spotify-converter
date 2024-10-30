@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def convert(url, name):
-    # YouTube API yetkilendirme.
+    # YouTube API yetkilendirme
     scopes = ['https://www.googleapis.com/auth/youtube.readonly']
     flow = InstalledAppFlow.from_client_secrets_file('client_secret.json', scopes=scopes)
     credentials = flow.run_local_server(port=0, host='https://youtube-to-spotify-converter.vercel.app')
@@ -28,10 +28,10 @@ def convert(url, name):
         scope=scope
     ))
 
-    # YouTube oynatma listesi URL'sini alın
+    
     playlist_url = url
 
-    # YouTube'dan şarkı başlıklarını ve video ID'lerini alın
+    # YouTube şarkı başlıklarını
     playlist_id = re.findall(r'(?<=list=)([a-zA-Z0-9_-]+)', playlist_url)[0]
 
     request = youtube.playlistItems().list(
@@ -58,7 +58,7 @@ def convert(url, name):
 
     playlist = sp.user_playlist_create(user=user_id, name=playlist_name)
 
-    # YouTube'dan alınan şarkı başlıklarını Spotify'da ara ve şarkı URI'lerini al
+    # YouTube'dan alınan şarkı başlıklarını Spotify'da arat
     song_uris = []
 
     for title in song_titles:
@@ -69,7 +69,7 @@ def convert(url, name):
             song_uri = items[0]['uri']
             song_uris.append(song_uri)
 
-    # Şarkı URI'lerini Spotify çalma listesine ekle
+    # Çalma listesine ekle
     sp.user_playlist_add_tracks(user=user_id, playlist_id=playlist['id'], tracks=song_uris)
 
 
