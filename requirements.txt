@@ -3,5 +3,5 @@ google_api_python_client==2.86.0
 google_auth_oauthlib==1.0.0
 google-auth-httplib2==0.1.0
 spotipy==2.25.1
-gunicorn==22.0.0
+gunicorn==23.0.0
 python-dotenv==1.0.0
